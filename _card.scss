@@ -1,0 +1,44 @@
+main {
+  display: grid;
+  justify-content: center;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, 250px);
+  div {
+    box-shadow: purple 0px 0px 5px;
+    height: 310px;
+    width: 250px;
+    border-radius: 10px;
+    img {
+      height: 250px;
+      width: 250px;
+      border-radius: 11px 11px 3px 3px;
+    }
+    p {
+      margin-left: 10px;
+      font-weight: 700;
+    }
+    m {
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      img {
+        height: 15px;
+        width: 15px;
+      }
+    }
+    &:hover {
+      height: 320px;
+      width: 260px;
+      img {
+        height: 260px;
+        width: 260px;
+      }
+      m {
+        img {
+          height: 15px;
+          width: 15px;
+        }
+      }
+    }
+  }
+}

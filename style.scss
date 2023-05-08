@@ -1,0 +1,50 @@
+@use "card";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+* {
+  //   pointer-events: none;
+  margin: 0;
+  padding: 0;
+  font-family: poppins;
+}
+nav {
+  color: white;
+  background-color: #1b263b;
+  display: flex;
+  height: 60px;
+  width: 100svw;
+  position: fixed;
+  align-items: center;
+  justify-content: space-around;
+  a {
+    text-decoration: none;
+    color: whitesmoke;
+    img {
+      height: 25px;
+    }
+  }
+  div {
+    position: relative;
+    h3 {
+      position: absolute;
+      right: -30px;
+      top: -20px;
+      background-color: rgb(1, 101, 101);
+      color: greenyellow;
+      padding-left: 2px;
+      padding-right: 2px;
+      border-radius: 3px;
+    }
+  }
+}
+#selector {
+  padding-top: 70px;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 23px;
+  select {
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+  }
+}
