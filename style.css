@@ -1,9 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+section {
+  padding-top: 100px;
+  display: grid;
+}
+section div {
+  display: grid;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 30px;
+  grid-template-columns: repeat(auto-fill, 400px);
+}
+section div img {
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: purple 0px 0px 5px;
+}
+section p {
+  padding-left: 50px;
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+section h1 {
+  margin-bottom: 10px;
+}
+section #quantity {
+  border-radius: 30px;
+  align-items: baseline;
+  display: flex;
+  width: 200px;
+  margin-left: 100px;
+  background-color: whitesmoke;
+}
+
 main {
   display: grid;
   justify-content: center;
   gap: 20px;
   grid-template-columns: repeat(auto-fill, 250px);
+}
+main a {
+  text-decoration: none;
 }
 main div {
   box-shadow: purple 0px 0px 5px;
@@ -25,9 +62,8 @@ main div m {
   display: flex;
   align-items: center;
 }
-main div m img {
-  height: 15px;
-  width: 15px;
+main div m i {
+  margin-right: 10px;
 }
 main div:hover {
   height: 320px;
@@ -36,10 +72,6 @@ main div:hover {
 main div:hover img {
   height: 260px;
   width: 260px;
-}
-main div:hover m img {
-  height: 15px;
-  width: 15px;
 }
 
 * {
@@ -61,9 +93,6 @@ nav {
 nav a {
   text-decoration: none;
   color: whitesmoke;
-}
-nav a img {
-  height: 25px;
 }
 nav div {
   position: relative;

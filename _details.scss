@@ -1,0 +1,33 @@
+section {
+  padding-top: 100px;
+  display: grid;
+  div {
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+    grid-template-columns: repeat(auto-fill, 400px);
+    img {
+      height: 400px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: purple 0px 0px 5px;
+    }
+  }
+  p {
+    padding-left: 50px;
+    max-width: 700px;
+    margin-bottom: 30px;
+  }
+  h1 {
+    margin-bottom: 10px;
+  }
+  #quantity {
+    border-radius: 30px;
+    align-items: baseline;
+    display: flex;
+    width: 200px;
+    margin-left: 100px;
+    background-color: whitesmoke;
+  }
+}

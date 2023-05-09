@@ -1,4 +1,7 @@
 main {
+  a {
+    text-decoration: none;
+  }
   display: grid;
   justify-content: center;
   gap: 20px;
@@ -21,9 +24,8 @@ main {
       margin-left: 10px;
       display: flex;
       align-items: center;
-      img {
-        height: 15px;
-        width: 15px;
+      i {
+        margin-right: 10px;
       }
     }
     &:hover {
@@ -32,12 +34,6 @@ main {
       img {
         height: 260px;
         width: 260px;
-      }
-      m {
-        img {
-          height: 15px;
-          width: 15px;
-        }
       }
     }
   }
