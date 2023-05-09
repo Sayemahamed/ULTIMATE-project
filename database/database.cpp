@@ -31,7 +31,6 @@ struct NodeStructure{
 };
 //End of Node structure
 
-
 // Start Generic Node Class
 template <typename T>
 class Node
@@ -155,6 +154,7 @@ int main()
     d.add(a);
     d.add(a);
     d.add(c);
+    d.add(b);
     vector<NodeStructure> v;
     d.getAll(v);
     for(auto& n : v)
