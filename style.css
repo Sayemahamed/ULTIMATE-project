@@ -24,6 +24,18 @@ section p {
 section h1 {
   margin-bottom: 10px;
 }
+section .fa-square-plus {
+  color: green;
+}
+section .fa-square-plus:hover {
+  color: greenyellow;
+}
+section .fa-square-minus {
+  color: red;
+}
+section .fa-square-minus:hover {
+  color: orangered;
+}
 section #quantity {
   border-radius: 30px;
   align-items: baseline;
@@ -72,6 +84,32 @@ main div:hover {
 main div:hover img {
   height: 260px;
   width: 260px;
+}
+
+#sumOfBill {
+  background: red;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  height: 180px;
+  padding-top: 130px;
+}
+#sumOfBill h1 {
+  color: whitesmoke;
+}
+#sumOfBill div {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  justify-content: space-around;
+}
+#sumOfBill div button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: black 0px 0 5px;
+  cursor: pointer;
 }
 
 * {

@@ -1,0 +1,25 @@
+#sumOfBill {
+    background: red;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    height: 180px;
+    padding-top: 130px;
+    h1 {
+      color: whitesmoke;
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      width: 300px;
+      justify-content: space-around;
+      button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: black 0px 0 5px;
+        cursor: pointer;
+      }
+    }
+  }
