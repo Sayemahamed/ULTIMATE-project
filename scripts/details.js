@@ -1,4 +1,5 @@
 let element = (tag) => document.querySelector(tag);
+let id = (id) => document.getElementById(id);
 let cart = JSON.parse(localStorage.getItem("data")) || [];
 fetch("http://localhost:3000/data")
   .then((response) => response.json())
@@ -11,7 +12,6 @@ let displayMainProduct = (items) => {
     .map((item) => {
       if (item.name === nam) {
         addToCart(item);
-        update(item.name);
         fetch(`http://localhost:3000/relatedData?identity=${item.type}`)
           .then((response) => response.json())
           .then((data) => {
@@ -78,9 +78,11 @@ let addToCart = (item) => {
       quantity: 0,
     });
   }
+  // console.log(cart);
 };
-let update = (name) => {
-  element(`#${name}`).innerText = cart.find(
-    (x) => x.name === item.name
-  ).quantity;
+let update = (nam) => {
+  let temp = cart.find((x) => x.name === nam);
+  console.log(temp);
+  console.log(id(`${nam}`));
+  localStorage.setItem("data", JSON.stringify(cart));
 };
