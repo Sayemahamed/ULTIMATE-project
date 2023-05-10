@@ -8,10 +8,10 @@ let nam = new URLSearchParams(window.location.search).get("identity");
 let displayMainProduct = (items) => {
   return (element("section").innerHTML = items.map((item) => {
     if (item.name === nam) {
-      fetch("http://localhost:3000/relatedData")
+      fetch(`http://localhost:3000/relatedData?identity=${item.type}`)
         .then((response) => response.json())
         .then((data) => {
-          showSimilarItems(JSON.parse(data), item.type);
+          showSimilarItems(JSON.parse(data));
         });
       return `
             <div>
@@ -41,10 +41,9 @@ let displayMainProduct = (items) => {
     }
   }));
 };
-let showSimilarItems = (items, type) => {
+let showSimilarItems = (items) => {
   return (element("main").innerHTML = items
     .map((item) => {
-      if (item.type === type)
         return `
     <a href="details.html?identity=${item.name}">
     <div>
