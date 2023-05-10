@@ -1,18 +1,28 @@
 let element = (tag) => document.querySelector(tag);
-let nam = new URLSearchParams(window.location.search).get("name");
-let displayMainProduct = () => {
+fetch("http://localhost:3000/data")
+  .then((response) => response.json())
+  .then((data) => {
+    displayMainProduct(JSON.parse(data));
+  });
+let nam = new URLSearchParams(window.location.search).get("identity");
+let displayMainProduct = (items) => {
   return (element("section").innerHTML = items.map((item) => {
-    if (item.name === nam)
+    if (item.name === nam) {
+      fetch("http://localhost:3000/relatedData")
+        .then((response) => response.json())
+        .then((data) => {
+          showSimilarItems(JSON.parse(data), item.type);
+        });
       return `
             <div>
                 <img
-                  src="${item.src}"
+                  src="${item.url}"
                 />
                 <img
-                  src="${item.src}"
+                  src="${item.url}"
                 />
                 <img
-                  src="${item.src}"
+                  src="${item.url}"
                 />
               </div>
               <p>
@@ -28,6 +38,22 @@ let displayMainProduct = () => {
               </div>
               <h1>Similar Items</h1>
                 `;
+    }
   }));
 };
-displayMainProduct();
+let showSimilarItems = (items, type) => {
+  return (element("main").innerHTML = items
+    .map((item) => {
+      if (item.type === type)
+        return `
+    <a href="details.html?identity=${item.name}">
+    <div>
+      <img
+        src=${item.url}/>
+      <p>${item.name}</p>
+      <m><i class="fa-solid fa-dollar-sign"></i>${item.price}</m>
+    </div>
+  </a>`;
+    })
+    .join(""));
+};
