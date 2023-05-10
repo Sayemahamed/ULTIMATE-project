@@ -2,28 +2,31 @@
 #include "customNode.cpp"
 #include "customDataStructure.cpp"
 using namespace std;
-void creatStructure(binarySearchTree<NodeStructure>&tree,string type, bool all = true){
-    string data;
+void creatTree(binarySearchTree<NodeStructure>&tree){
+    string data,data1,data2,data3,data4;
     ifstream ReadFile("C:\\Users\\sayem\\source\\ULTIMATE project\\database\\data.txt");
     getline(ReadFile, data);
     ReadFile.close();
+    data4=data3=data2=data1=data;
     smatch matchName, matchUrl, matchPrice, matchType, matchGender;
     regex link("<link>(.*?)</link>"), name("<name>(.*?)</name>"), price("<price>(.*?)</price>"), gender("<gender>(.*?)</gender>"), typ("<type>(.*?)</type>");
     while (regex_search(data, matchName, name)){
         string N = matchName.str(1);
-        regex_search(data, matchUrl, link);
+        regex_search(data1, matchUrl, link);
         string U = matchUrl.str(1);
-        regex_search(data, matchPrice, price);
+        regex_search(data2, matchPrice, price);
         string P = matchPrice.str(1);
-        regex_search(data, matchPrice, typ);
+        regex_search(data3, matchType, typ);
         string T = matchType.str(1);
-        regex_search(data, matchGender, gender);
+        regex_search(data4, matchGender, gender);
         string G = matchGender.str(1);
         data = matchName.suffix().str();
-        if (type == T or all){
-            NodeStructure tmp(N, U, P, T, G);
-            tree.add(tmp);
-        }
+        data1 = matchUrl.suffix().str();
+        data2= matchPrice.suffix().str();
+        data3= matchType.suffix().str();
+        data4 =matchGender.suffix().str();
+        NodeStructure tmp(N, U, P, T, G);
+        tree.add(tmp);
     }
 }
 void addToDataBase(binarySearchTree<NodeStructure>&tree,NodeStructure&N){
@@ -32,12 +35,14 @@ void addToDataBase(binarySearchTree<NodeStructure>&tree,NodeStructure&N){
     tree.getAll(data);
     data.push_back(N);
     string str="";
-    for(auto&no)
+    for(auto&node:data){
+        str+="<name>"+node.name+"</name>";
+        str+="<link>"+node.url+"</link>";
+        str+="<price>"+node.price+"</price>";
+        str+="<type>"+node.type+"</type>";
+        str+="<gender>"+node.gender+"</gender>";
+    }
     myFile.open ("C:\\Users\\sayem\\source\\ULTIMATE project\\database\\data.txt");
+    myFile <<str;
     myFile.close();
-    // myFile << "<link>https://images.pexels.com/photos/14410461/pexels-photo-14410461.jpeg?cs=srgb&dl=pexels-jenny-mavimiro-14410461.jpg&fm=jpg&_gl=1*awvqu3*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4MzU1ODk1Ni40LjEuMTY4MzU1OTA1NC4wLjAuMA..</link>";
 }
-// int main()
-// {
-
-// }

@@ -26,6 +26,9 @@ struct NodeStructure{
     bool operator < (NodeStructure const& obj){
         return type<obj.type;
     }
+    bool operator >=(NodeStructure const& obj){
+        return type>=obj.type;
+    }
     bool operator <=(NodeStructure const& obj){
         return type<=obj.type;
     }

@@ -4,22 +4,41 @@
 #include "customDataStructure.cpp"
 using namespace std;
 
-int main()
+int main(int argc, char *argv[])
 {
-    NodeStructure a("sayem", "http://www.","10", "toys", "male"), b("sayem", "http://www.","20", "toy", "male"), c("sayem", "http://www.","40", "toy", "male");
-    binarySearchTree<NodeStructure> d;
-    d.add(b);
-    d.add(a);
-    d.add(a);
-    d.add(a);
-    d.add(a);
-    d.add(b);
-    d.add(a);
-    d.add(a);
-    d.add(c);
-    d.add(b);
-    vector<NodeStructure> v;
-    d.getAll(v);
-    for (auto &n : v)
-        cout << n.gender << " " << n.name << " "<<n.price<<' ' << n.type << " " << n.url << endl;
+    binarySearchTree<NodeStructure> dataBaseTree;
+    creatTree(dataBaseTree);
+    string order=argv[1];
+    if (order == "start")
+    {
+        string str="[";
+        vector<NodeStructure> v;
+        dataBaseTree.getAll(v);
+        for(long long i=0; i<v.size(); i++){
+            str+="{\"name\":\""+v[i].name+"\",\"url\":\""+v[i].url+"\",\"price\":"+v[i].price+",\"type\":\""+v[i].type+"\",\"gender\":\""+v[i].gender+"\"}";
+            if(i!=v.size()-1)
+            str+=",";
+        }
+        str+="]";
+        cout<<str;
+    }
+    else if(order=="add"){
+        string name = argv[2],url = argv[3],price = argv[4],type = argv[5],gender =argv[6];
+        NodeStructure newNode(name,url,price,type,gender);
+        addToDataBase(dataBaseTree,newNode);
+    }
+    else if(order=="type"){
+        vector<NodeStructure> v;
+        string str="";
+        str+="[";
+        dataBaseTree.getRelated(v,argv[2]);
+        for(long long i=0; i<v.size(); i++){
+            str+="{\"name\":\""+v[i].name+"\",\"url\":\""+v[i].url+"\",\"price\":"+v[i].price+",\"type\":\""+v[i].type+"\",\"gender\":\""+v[i].gender+"\"}";
+            if(i!=v.size()-1)
+            str+=",";
+        }
+        str+="]";
+        cout<<str;
+    }
 }
+// [{"name":"sayem","url":"https://","price":10,"type":"sell","gender":"male"},{}]

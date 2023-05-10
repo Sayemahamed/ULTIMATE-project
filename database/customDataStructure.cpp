@@ -25,9 +25,11 @@ private:
     void depthFirstSearch(Node<T> *node, vector<NodeStructure> &container, string type, bool all){
         if (node == NULL)
             return;
+        if(type<=node->data.type or all)
         depthFirstSearch(node->SmallerNodePoint, container, type, all);
         if (all or node->data.type == type)
             container.push_back(node->data);
+        if(type>=node->data.type or all)
         depthFirstSearch(node->BiggerNodePoint, container, type, all);
     }
     long long leftDepth(Node<T> *node, long long cnt){
@@ -44,6 +46,9 @@ private:
 public:
     void getAll(vector<NodeStructure> &container){
         depthFirstSearch(Root, container, "all", true);
+    }
+    void getRelated(vector<NodeStructure>&container,string type){
+        depthFirstSearch(Root, container, type, false);
     }
     void add(T data){
         if (Root == NULL){
