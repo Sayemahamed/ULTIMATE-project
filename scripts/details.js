@@ -6,14 +6,15 @@ fetch("http://localhost:3000/data")
   });
 let nam = new URLSearchParams(window.location.search).get("identity");
 let displayMainProduct = (items) => {
-  return (element("section").innerHTML = items.map((item) => {
-    if (item.name === nam) {
-      fetch(`http://localhost:3000/relatedData?identity=${item.type}`)
-        .then((response) => response.json())
-        .then((data) => {
-          showSimilarItems(JSON.parse(data));
-        });
-      return `
+  return (element("section").innerHTML = items
+    .map((item) => {
+      if (item.name === nam) {
+        fetch(`http://localhost:3000/relatedData?identity=${item.type}`)
+          .then((response) => response.json())
+          .then((data) => {
+            showSimilarItems(JSON.parse(data));
+          });
+        return `
             <div>
                 <img
                   src="${item.url}"
@@ -36,15 +37,15 @@ let displayMainProduct = (items) => {
                 <h2>${item.price}</h2>
                 <i class="fa-solid fa-square-plus fa-xl"></i>
               </div>
-              <h1>Similar Items</h1>
-                `;
-    }
-  }));
+              <h1>Similar Items</h1>`;
+      }
+    })
+    .join(""));
 };
 let showSimilarItems = (items) => {
   return (element("main").innerHTML = items
     .map((item) => {
-        return `
+      return `
     <a href="details.html?identity=${item.name}">
     <div>
       <img

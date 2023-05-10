@@ -1,5 +1,5 @@
 let element = (tag) => document.querySelector(tag);
-let items;
+
 fetch("http://localhost:3000/data")
   .then((response) => response.json())
   .then((data) => {

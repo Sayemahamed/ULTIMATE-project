@@ -1,25 +1,61 @@
 #sumOfBill {
-    background: red;
-    flex-direction: column;
+  background: red;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  height: 180px;
+  padding-top: 130px;
+  h1 {
+    color: whitesmoke;
+  }
+  div {
     display: flex;
-    align-items: center;
-    height: 180px;
-    padding-top: 130px;
-    h1 {
-      color: whitesmoke;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-around;
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: none;
+      box-shadow: black 0px 0 5px;
+      cursor: pointer;
     }
+  }
+}
+#billContainer {
+  display: grid;
+  justify-content: center;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fill, 460px);
+
+  margin-top: 30px;
+  a {
+    text-decoration: none;
+    color: black;
     div {
+      box-shadow: purple 0px 0px 5px;
+      max-width: 450px;
+      border-radius: 5px;
       display: flex;
-      flex-direction: row;
-      width: 300px;
-      justify-content: space-around;
-      button {
-        padding: 10px 20px;
-        margin-top: 10px;
+      img {
+        border-radius: 5px;
+        max-width: 40svw;
+        max-height: 200px;
+        aspect-ratio: 1;
+        margin-right: 10px;
+      }
+    }
+    &:hover {
+      div {
+        box-shadow: purple 0px 0px 10px;
         border-radius: 10px;
-        border: none;
-        box-shadow: black 0px 0 5px;
-        cursor: pointer;
+        max-width: 460px;
+        img {
+          border-radius: 10px;
+          max-height: 210px;
+        }
       }
     }
   }
+}

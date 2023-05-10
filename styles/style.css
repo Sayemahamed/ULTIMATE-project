@@ -34,7 +34,7 @@ section .fa-square-minus {
   color: red;
 }
 section .fa-square-minus:hover {
-  color: orangered;
+  color: black;
 }
 section #quantity {
   border-radius: 30px;
@@ -78,10 +78,13 @@ main div m i {
   margin-right: 10px;
 }
 main div:hover {
+  box-shadow: purple 0px 0px 10px;
+  border-radius: 15px;
   height: 320px;
   width: 260px;
 }
 main div:hover img {
+  border-radius: 15px 15px 3px 3px;
   height: 260px;
   width: 260px;
 }
@@ -110,6 +113,40 @@ main div:hover img {
   border: none;
   box-shadow: black 0px 0 5px;
   cursor: pointer;
+}
+
+#billContainer {
+  display: grid;
+  justify-content: center;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fill, 460px);
+  margin-top: 30px;
+}
+#billContainer a {
+  text-decoration: none;
+  color: black;
+}
+#billContainer a div {
+  box-shadow: purple 0px 0px 5px;
+  max-width: 450px;
+  border-radius: 5px;
+  display: flex;
+}
+#billContainer a div img {
+  border-radius: 5px;
+  max-width: 40svw;
+  max-height: 200px;
+  aspect-ratio: 1;
+  margin-right: 10px;
+}
+#billContainer a:hover div {
+  box-shadow: purple 0px 0px 10px;
+  border-radius: 10px;
+  max-width: 460px;
+}
+#billContainer a:hover div img {
+  border-radius: 10px;
+  max-height: 210px;
 }
 
 * {

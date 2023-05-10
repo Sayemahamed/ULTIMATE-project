@@ -44,7 +44,12 @@ http
       );
       res.end();
       console.log("Relational Data request made to DataBase");
-    } else console.log(req.url);
+    } else if(req.url==="/cart.html"){
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.write(fs.readFileSync(__dirname + "\\html\\cart.html", "utf-8"));
+      res.end();
+    }
+    else console.log(req.url);
   })
   .listen(3000, () => {
     console.log("Server listening at port 3000");

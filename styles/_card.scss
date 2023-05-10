@@ -29,9 +29,12 @@ main {
       }
     }
     &:hover {
+      box-shadow: purple 0px 0px 10px;
+      border-radius: 15px;
       height: 320px;
       width: 260px;
       img {
+        border-radius: 15px 15px 3px 3px;
         height: 260px;
         width: 260px;
       }
