@@ -24,9 +24,9 @@ let enterNewRecord = (name, url, price, type, gender) => {
   );
 };
 enterNewRecord(
-  "Big-Pizza",
-  "https://images.pexels.com/photos/14906564/pexels-photo-14906564.jpeg?cs=srgb&dl=pexels-alteredsnaps-14906564.jpg&fm=jpg&w=640&h=480&_gl=1*61hiqd*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4Mzc0MzM1My43LjEuMTY4Mzc0NTc1NC4wLjAuMA..",
-  "59",
+  "Combo-Pack",
+  "https://images.pexels.com/photos/2433980/pexels-photo-2433980.jpeg?cs=srgb&dl=pexels-desativado-2433980.jpg&fm=jpg&w=640&h=964&_gl=1*bu0euu*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4Mzc0MzM1My43LjEuMTY4Mzc0NTk4My4wLjAuMA..",
+  "102",
   "food",
   "all"
 );
