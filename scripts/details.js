@@ -1,5 +1,4 @@
 let element = (tag) => document.querySelector(tag);
-let id = (id) => document.getElementById(id);
 let cart = JSON.parse(localStorage.getItem("data")) || [];
 fetch("http://localhost:3000/data")
   .then((response) => response.json())
@@ -60,15 +59,6 @@ let showSimilarItems = (items) => {
     })
     .join(""));
 };
-let decrement = (name) => {
-  let temp = cart.find((x) => x.name === name);
-  if (temp.quantity > 0) temp.quantity -= 1;
-  update(name);
-};
-let increment = (name) => {
-  cart.find((x) => x.name === name).quantity += 1;
-  update(name);
-};
 let addToCart = (item) => {
   if (cart.find((x) => x.name === item.name) === undefined) {
     cart.push({
@@ -78,11 +68,5 @@ let addToCart = (item) => {
       quantity: 0,
     });
   }
-  // console.log(cart);
-};
-let update = (nam) => {
-  let temp = cart.find((x) => x.name === nam);
-  console.log(temp);
-  console.log(id(`${nam}`));
-  localStorage.setItem("data", JSON.stringify(cart));
+  console.log(cart);
 };
