@@ -24,9 +24,9 @@ let enterNewRecord = (name, url, price, type, gender) => {
   );
 };
 enterNewRecord(
-  "CheeseBurger",
-  "https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?cs=srgb&dl=pexels-rajesh-tp-1633578.jpg&fm=jpg&w=640&h=755&_gl=1*gmajg3*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4Mzc0MzM1My43LjEuMTY4Mzc0NDgzNS4wLjAuMA..",
-  "37",
+  "ChickenBurger",
+  "https://images.pexels.com/photos/1199960/pexels-photo-1199960.jpeg?cs=srgb&dl=pexels-valeria-boltneva-1199960.jpg&fm=jpg&w=640&h=427&_gl=1*1s8hok7*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4Mzc0MzM1My43LjEuMTY4Mzc0NDk2MC4wLjAuMA..",
+  "49",
   "food",
   "all"
 );
