@@ -23,13 +23,13 @@ let enterNewRecord = (name, url, price, type, gender) => {
     }
   );
 };
-enterNewRecord(
-  "White-Buttoned-Shirt",
-  "https://images.pexels.com/photos/297933/pexels-photo-297933.jpeg?cs=srgb&dl=pexels-david-bartus-297933.jpg&fm=jpg&w=640&h=427&_gl=1*jddfqm*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4Mzc0MzM1My43LjEuMTY4Mzc0NjIwOC4wLjAuMA..",
-  "120",
-  "mansTops",
-  "male"
-);
+// enterNewRecord(
+//   "White-Buttoned-Shirt",
+//   "https://images.pexels.com/photos/297933/pexels-photo-297933.jpeg?cs=srgb&dl=pexels-david-bartus-297933.jpg&fm=jpg&w=640&h=427&_gl=1*jddfqm*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4Mzc0MzM1My43LjEuMTY4Mzc0NjIwOC4wLjAuMA..",
+//   "120",
+//   "mansTops",
+//   "male"
+// );
 module.exports = {
   enterNewRecord,
   getAllData,
