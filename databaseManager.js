@@ -23,13 +23,13 @@ let enterNewRecord = (name, url, price, type, gender) => {
     }
   );
 };
-// enterNewRecord(
-//   "Lemon-Juice",
-//   "https://images.pexels.com/photos/2109099/pexels-photo-2109099.jpeg?cs=srgb&dl=pexels-designbyja-2109099.jpg&fm=jpg&w=640&h=429&_gl=1*1lp78vi*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4MzczMjQwNS42LjEuMTY4MzczMjQzMy4wLjAuMA..",
-//   "30",
-//   "food",
-//   "all"
-// );
+enterNewRecord(
+  "Mango-Juice",
+  "https://images.pexels.com/photos/1251210/pexels-photo-1251210.jpeg?cs=srgb&dl=pexels-valeria-boltneva-1251210.jpg&fm=jpg&w=640&h=960&_gl=1*1yriae4*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4Mzc0MzM1My43LjEuMTY4Mzc0MzU3NC4wLjAuMA..",
+  "32",
+  "food",
+  "all"
+);
 // console.log(getAllData());
 module.exports = {
   enterNewRecord,
