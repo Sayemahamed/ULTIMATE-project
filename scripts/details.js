@@ -1,4 +1,5 @@
 let element = (tag) => document.querySelector(tag);
+let cart = JSON.parse(localStorage.getItem("data")) || [];
 fetch("http://localhost:3000/data")
   .then((response) => response.json())
   .then((data) => {
@@ -9,6 +10,8 @@ let displayMainProduct = (items) => {
   return (element("section").innerHTML = items
     .map((item) => {
       if (item.name === nam) {
+        addToCart(item);
+        update(item.name);
         fetch(`http://localhost:3000/relatedData?identity=${item.type}`)
           .then((response) => response.json())
           .then((data) => {
@@ -33,9 +36,9 @@ let displayMainProduct = (items) => {
                 laboriosam nesciunt earum sint.
               </p>
               <div id="quantity">
-                <i class="fa-solid fa-square-minus fa-lg"></i>
-                <h2>${item.price}</h2>
-                <i class="fa-solid fa-square-plus fa-xl"></i>
+                <i onclick="decrement(${item.name})" class="fa-solid fa-square-minus fa-lg"></i>
+                <h2 id="${item.name}">0</h2>
+                <i onclick="increment(${item.name})" class="fa-solid fa-square-plus fa-xl"></i>
               </div>
               <h1>Similar Items</h1>`;
       }
@@ -56,4 +59,28 @@ let showSimilarItems = (items) => {
   </a>`;
     })
     .join(""));
+};
+let decrement = (name) => {
+  let temp = cart.find((x) => x.name === name);
+  if (temp.quantity > 0) temp.quantity -= 1;
+  update(name);
+};
+let increment = (name) => {
+  cart.find((x) => x.name === name).quantity += 1;
+  update(name);
+};
+let addToCart = (item) => {
+  if (cart.find((x) => x.name === item.name) === undefined) {
+    cart.push({
+      name: item.name,
+      price: item.price,
+      url: item.url,
+      quantity: 0,
+    });
+  }
+};
+let update = (name) => {
+  element(`#${name}`).innerText = cart.find(
+    (x) => x.name === item.name
+  ).quantity;
 };

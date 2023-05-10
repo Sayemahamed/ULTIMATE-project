@@ -21,3 +21,7 @@ let displayProducts = (items) => {
     })
     .join(""));
 };
+let updateCart = () => {
+  cart = cart.filter((item) => item.quantity !== 0);
+};
+updateCart();
