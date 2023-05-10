@@ -24,8 +24,8 @@ let enterNewRecord = (name, url, price, type, gender) => {
   );
 };
 enterNewRecord(
-  "Mango-Juice",
-  "https://images.pexels.com/photos/1251210/pexels-photo-1251210.jpeg?cs=srgb&dl=pexels-valeria-boltneva-1251210.jpg&fm=jpg&w=640&h=960&_gl=1*1yriae4*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4Mzc0MzM1My43LjEuMTY4Mzc0MzU3NC4wLjAuMA..",
+  "Pineapple-Juice",
+  "https://images.pexels.com/photos/5817633/pexels-photo-5817633.jpeg?cs=srgb&dl=pexels-shameel-mukkath-5817633.jpg&fm=jpg&_gl=1*143i9rc*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4Mzc0MzM1My43LjEuMTY4Mzc0Mzc0NS4wLjAuMA..",
   "32",
   "food",
   "all"
