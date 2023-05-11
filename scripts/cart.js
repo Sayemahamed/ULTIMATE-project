@@ -16,6 +16,8 @@ let displayProducts = () => {
     .join(""));
 };
 let update = () => {
+  cart = cart.filter((item) => item.quantity !== 0);
+  localStorage.setItem("data", JSON.stringify(cart));
   let totalMoney = 0,
     count = 0;
   cart.forEach((item) => {
@@ -25,5 +27,5 @@ let update = () => {
   element("#total").innerHTML = count;
   element("#sumOfBills").innerHTML = totalMoney;
 };
-update()
+update();
 displayProducts();
