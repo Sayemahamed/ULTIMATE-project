@@ -1,5 +1,4 @@
 let element = (tag) => document.querySelector(tag);
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
 fetch("http://localhost:3000/data")
   .then((response) => response.json())
   .then((data) => {
@@ -22,6 +21,13 @@ let displayProducts = (items) => {
     .join(""));
 };
 let updateCart = () => {
+  cart = JSON.parse(localStorage.getItem("data")) || [];
   cart = cart.filter((item) => item.quantity !== 0);
+  localStorage.setItem("data", JSON.stringify(cart));
+  let count = 0;
+  cart.forEach((item) => {
+    count += item.quantity;
+  });
+  element("#total").innerHTML = count;
 };
 updateCart();

@@ -35,16 +35,26 @@ let displayMainProduct = (items) => {
                 laboriosam nesciunt earum sint.
               </p>
               <div id="quantity">
-                <i onclick="decrement(${item.name})" class="fa-solid fa-square-minus fa-lg"></i>
+                <i onclick="decrement()" class="fa-solid fa-square-minus fa-lg"></i>
                 <h2 id="${item.name}">0</h2>
-                <i onclick="increment(${item.name})" class="fa-solid fa-square-plus fa-xl"></i>
+                <i onclick="increment()" class="fa-solid fa-square-plus fa-xl"></i>
               </div>
               <h1>Similar Items</h1>`;
       }
     })
     .join(""));
 };
+let decrement = () => {
+  let temp = cart.find((x) => x.name === nam);
+  if (temp.quantity > 0) temp.quantity -= 1;
+  update();
+};
+let increment = () => {
+  cart.find((x) => x.name === nam).quantity += 1;
+  update();
+};
 let showSimilarItems = (items) => {
+  update();
   return (element("main").innerHTML = items
     .map((item) => {
       return `
@@ -68,5 +78,13 @@ let addToCart = (item) => {
       quantity: 0,
     });
   }
-  console.log(cart);
+};
+let update = () => {
+  let count = 0;
+  cart.forEach((item) => {
+    count += item.quantity;
+    if (item.name == nam) element("#" + nam).innerText = item.quantity;
+  });
+  element("#total").innerHTML = count;
+  localStorage.setItem("data", JSON.stringify(cart));
 };

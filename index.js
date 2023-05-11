@@ -44,12 +44,15 @@ http
       );
       res.end();
       console.log("Relational Data request made to DataBase");
-    } else if(req.url==="/cart.html"){
+    } else if (req.url === "/cart.html") {
       res.writeHead(200, { "Content-Type": "text/html" });
       res.write(fs.readFileSync(__dirname + "\\html\\cart.html", "utf-8"));
       res.end();
-    }
-    else console.log(req.url);
+    } else if (req.url === "/style.css.map") {
+      res.writeHead(200, { "Content-Type": "text/css" });
+      res.write(fs.readFileSync(__dirname + "\\styles\\style.css.map", "utf8"));
+      res.end();
+    } else console.log(req.url);
   })
   .listen(3000, () => {
     console.log("Server listening at port 3000");
