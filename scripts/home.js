@@ -1,9 +1,10 @@
 let element = (tag) => document.querySelector(tag);
-fetch("http://localhost:3000/data")
+fetch("/data")
   .then((response) => response.json())
   .then((data) => {
     displayProducts(JSON.parse(data));
-  });
+  })
+  .catch((error) => console.log(error));
 let displayProducts = (items) => {
   return (element("main").innerHTML = items
     .map((item) => {

@@ -1,6 +1,6 @@
 let element = (tag) => document.querySelector(tag);
 let cart = JSON.parse(localStorage.getItem("data")) || [];
-fetch("http://localhost:3000/data")
+fetch("/data")
   .then((response) => response.json())
   .then((data) => {
     displayMainProduct(JSON.parse(data));
@@ -11,7 +11,7 @@ let displayMainProduct = (items) => {
     .map((item) => {
       if (item.name === nam) {
         addToCart(item);
-        fetch(`http://localhost:3000/relatedData?identity=${item.type}`)
+        fetch(`/relatedData?identity=${item.type}`)
           .then((response) => response.json())
           .then((data) => {
             showSimilarItems(JSON.parse(data));
