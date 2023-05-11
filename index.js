@@ -52,6 +52,10 @@ http
       res.writeHead(200, { "Content-Type": "text/css" });
       res.write(fs.readFileSync(__dirname + "\\styles\\style.css.map", "utf8"));
       res.end();
+    } else if (req.url === "/cart.js") {
+      res.writeHead(200, { "Content-Type": "application/javascript" });
+      res.write(fs.readFileSync(__dirname + "\\scripts\\cart.js", "utf8"));
+      res.end();
     } else console.log(req.url);
   })
   .listen(3000, () => {
