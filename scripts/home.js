@@ -1,7 +1,9 @@
 let element = (tag) => document.querySelector(tag);
-setGender(){
-  console.log("setGender");
-}
+let gender = JSON.parse(localStorage.getItem("gender")) || "all";
+setGender = () => {
+  gender = element("#select").value;
+  localStorage.setItem("gender", JSON.stringify(gender));
+};
 fetch("/data")
   .then((response) => response.json())
   .then((data) => {
@@ -9,9 +11,11 @@ fetch("/data")
   })
   .catch((error) => console.log(error));
 let displayProducts = (items) => {
+  element("#select").value = gender;
   return (element("main").innerHTML = items
     .map((item) => {
-      return `
+      if (item.gender === "all" || item.gender === gender)
+        return `
         <a href="details.html?identity=${item.name}">
         <div>
           <img
