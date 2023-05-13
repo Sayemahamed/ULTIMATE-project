@@ -1,4 +1,7 @@
 let element = (tag) => document.querySelector(tag);
+setGender(){
+  console.log("setGender");
+}
 fetch("/data")
   .then((response) => response.json())
   .then((data) => {
