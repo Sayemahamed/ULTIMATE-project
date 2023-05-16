@@ -20,10 +20,11 @@ http
       res.write(fs.readFileSync(__dirname + "\\scripts\\home.js", "utf8"));
       res.end();
     } else if (req.url === "/data") {
+      console.log("Data request made to DataBase");
       res.writeHead(200, { "Content-Type": "application/json" });
       res.write(JSON.stringify(getAllData()));
       res.end();
-      console.log("Data request made to DataBase");
+      console.log("Data Response Status : Success");
     } else if (req.url === "/assets/cart.svg") {
       res.writeHead(200, { "Content-Type": "image/svg+xml" });
       res.write(fs.readFileSync(__dirname + "\\assets\\cart.svg", "utf-8"));
@@ -38,12 +39,13 @@ http
       res.end();
     } else if (req.url.match("/relatedData") == "/relatedData") {
       // console.log(req.url.substring(22, req.url.length));
+      console.log("Relational Data request made to DataBase");
       res.writeHead(200, { "Content-Type": "application/json" });
       res.write(
         JSON.stringify(getRelatedData(req.url.substring(22, req.url.length)))
       );
       res.end();
-      console.log("Relational Data request made to DataBase");
+      console.log("Data Response Status : Success");
     } else if (req.url === "/cart.html") {
       res.writeHead(200, { "Content-Type": "text/html" });
       res.write(fs.readFileSync(__dirname + "\\html\\cart.html", "utf-8"));

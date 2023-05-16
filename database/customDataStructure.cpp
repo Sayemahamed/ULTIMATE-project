@@ -35,11 +35,17 @@ private:
     long long leftDepth(Node<T> *node, long long cnt){
         if (node == NULL)
             return cnt + 1;
+        if(node->SmallerNodePoint!=NULL)
+        if(!(node->SmallerNodePoint->data==node->data))
+            return cnt + 20;
         return leftDepth(node->SmallerNodePoint, cnt + 1);
     }
     long long rightDepth(Node<T> *node, long long cnt){
         if (node == NULL)
             return cnt + 1;
+        if(node->BiggerNodePoint!=NULL)
+        if(!(node->BiggerNodePoint->data==node->data))
+            return cnt + 20;
         return rightDepth(node->BiggerNodePoint, cnt + 1);
     }
 
