@@ -24,9 +24,9 @@ let enterNewRecord = (name, url, price, type, gender) => {
   );
 };
 // enterNewRecord(
-//   "Standard-Shirt",
-//   "https://images.pexels.com/photos/10952733/pexels-photo-10952733.jpeg?cs=srgb&dl=pexels-farhad-chaudhary-10952733.jpg&fm=jpg&_gl=1*16fz7ae*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4NDI0ODY5MC45LjEuMTY4NDI0OTI5OS4wLjAuMA..",
-//   "115",
+//   "Check-Shirt",
+//   "https://pixabay.com/get/g9b77bda8bc4031604832033e2038a09fced1fb283380cd50ae15a68c9d6b1aa933b9ddef840d5139c060acd75d8118a4570b614c03cd874c48075129a0ce3bc3d00718a6cac890ca11030743e15ed6b6_640.jpg",
+//   "105",
 //   "mansTops",
 //   "male"
 // );
