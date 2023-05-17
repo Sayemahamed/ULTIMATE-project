@@ -24,11 +24,11 @@ let enterNewRecord = (name, url, price, type, gender) => {
   );
 };
 // enterNewRecord(
-//   "Check-Shirt",
-//   "https://pixabay.com/get/g9b77bda8bc4031604832033e2038a09fced1fb283380cd50ae15a68c9d6b1aa933b9ddef840d5139c060acd75d8118a4570b614c03cd874c48075129a0ce3bc3d00718a6cac890ca11030743e15ed6b6_640.jpg",
-//   "105",
-//   "mansTops",
-//   "male"
+//   "Cars-Collection",
+//   "https://images.pexels.com/photos/163696/toy-car-toy-box-mini-163696.jpeg?cs=srgb&dl=pexels-pixabay-163696.jpg&fm=jpg&_gl=1*kh2q63*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4NDI1MjU1NS4xMC4xLjE2ODQyNTgwODQuMC4wLjA.",
+//   "68",
+//   "toys",
+//   "child"
 // );
 module.exports = {
   enterNewRecord,
