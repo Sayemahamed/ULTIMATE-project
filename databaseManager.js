@@ -24,9 +24,9 @@ let enterNewRecord = (name, url, price, type, gender) => {
   );
 };
 // enterNewRecord(
-//   "Cars-Collection",
-//   "https://images.pexels.com/photos/163696/toy-car-toy-box-mini-163696.jpeg?cs=srgb&dl=pexels-pixabay-163696.jpg&fm=jpg&_gl=1*kh2q63*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4NDI1MjU1NS4xMC4xLjE2ODQyNTgwODQuMC4wLjA.",
-//   "68",
+//   "Rubiks-cube",
+//   "https://images.pexels.com/photos/19677/pexels-photo.jpg?cs=srgb&dl=pexels-miguel-%C3%A1-padri%C3%B1%C3%A1n-19677.jpg&fm=jpg&_gl=1*l7ckn7*_ga*OTkwODAwMDcuMTY4MTM3NTExMg..*_ga_8JE65Q40S6*MTY4NDQyMzE2MS4xMi4xLjE2ODQ0MjQ5MjYuMC4wLjA.",
+//   "12",
 //   "toys",
 //   "child"
 // );
@@ -35,3 +35,4 @@ module.exports = {
   getAllData,
   getRelatedData,
 };
+// console.log(getAllData());
