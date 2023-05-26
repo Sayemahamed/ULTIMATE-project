@@ -3,7 +3,7 @@ let cart = JSON.parse(localStorage.getItem("data")) || [];
 fetch("/data")
   .then((response) => response.json())
   .then((data) => {
-    displayMainProduct(JSON.parse(data));
+    displayMainProduct(data);
   });
 let nam = new URLSearchParams(window.location.search).get("identity");
 let displayMainProduct = (items) => {
@@ -14,7 +14,7 @@ let displayMainProduct = (items) => {
         fetch(`/relatedData?identity=${item.type}`)
           .then((response) => response.json())
           .then((data) => {
-            showSimilarItems(JSON.parse(data));
+            showSimilarItems(data);
           });
         return `
             <div>

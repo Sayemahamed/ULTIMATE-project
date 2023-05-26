@@ -22,7 +22,7 @@ http
     } else if (req.url === "/data") {
       console.log("Data request made to DataBase");
       res.writeHead(200, { "Content-Type": "application/json" });
-      res.write(JSON.stringify(getAllData()));
+      res.write(getAllData());
       res.end();
       console.log("Data Response Status : Success");
     } else if (req.url === "/assets/cart.svg") {
@@ -41,9 +41,7 @@ http
       // console.log(req.url.substring(22, req.url.length));
       console.log("Relational Data request made to DataBase");
       res.writeHead(200, { "Content-Type": "application/json" });
-      res.write(
-        JSON.stringify(getRelatedData(req.url.substring(22, req.url.length)))
-      );
+      res.write(getRelatedData(req.url.substring(22, req.url.length)));
       res.end();
       console.log("Data Response Status : Success");
     } else if (req.url === "/cart.html") {

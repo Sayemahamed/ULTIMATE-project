@@ -9,7 +9,7 @@ let render = () => {
   fetch("/data")
     .then((response) => response.json())
     .then((data) => {
-      displayProducts(JSON.parse(data));
+      displayProducts(data);
     })
     .catch((error) => console.log(error));
 };
