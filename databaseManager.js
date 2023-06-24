@@ -35,4 +35,4 @@ module.exports = {
   getAllData,
   getRelatedData,
 };
-// console.log(getAllData());
+// console.log(getRelatedData("WomenFootWear"));

@@ -1,6 +1,8 @@
 {
     "C_Cpp.dimInactiveRegions": false,
     "files.associations": {
-        "regex": "cpp"
+        "regex": "cpp",
+        "map": "cpp",
+        "memory": "cpp"
     }
 }
